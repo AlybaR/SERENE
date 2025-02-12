@@ -1,0 +1,333 @@
+/* style.css */
+
+/* Réinitialisation */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global */
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fbfd;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Animation */
+  .fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Navigation */
+  header nav {
+    background: linear-gradient(90deg, #4A90E2, #5AB0F0);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav ul li {
+    margin: 0 1rem;
+  }
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  header nav ul li a:hover,
+  header nav ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Hero Section (Accueil) */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    background: url('images/hero-bg.jpg') no-repeat center/cover;
+    color: #fff;
+    position: relative;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+  }
+  .hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    text-align: center;
+    padding: 1rem;
+  }
+  .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .cta-buttons .btn {
+    display: inline-block;
+    background: #ff9800;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+  }
+  .cta-buttons .btn:hover {
+    background: #f57c00;
+    transform: translateY(-2px);
+  }
+  
+  /* Slider */
+  .hero-slider {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .hero-slider .slide {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .hero-slider .slide.active {
+    opacity: 1;
+  }
+  .hero-slider img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .slide-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .about h2 {
+    margin-bottom: 1rem;
+  }
+  
+  /* Sections communes */
+  .section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Formulaires */
+  form {
+    margin-bottom: 1rem;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #555;
+  }
+  input[type="text"],
+  input[type="date"],
+  input[type="range"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border 0.3s, box-shadow 0.3s;
+  }
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #4A90E2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.5);
+  }
+  input[type="range"] {
+    width: 90%;
+  }
+  button {
+    background: #4A90E2;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+  }
+  button:hover {
+    background: #357ABD;
+    transform: translateY(-2px);
+  }
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  /* Loading */
+  .loading {
+    text-align: center;
+    padding: 1rem;
+  }
+  .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #4A90E2;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Google Maps Containers */
+  #map,
+  #planification-map {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  
+  /* Detailed Steps */
+  #etapes-container {
+    margin: 1rem 0;
+    border: 1px dashed #ccc;
+    padding: 1rem;
+    border-radius: 6px;
+    background: #f7f9fb;
+  }
+  .step {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: move;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .step input[type="text"],
+  .step input[type="date"],
+  .step input[type="number"],
+  .step select {
+    flex: 1;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .step button {
+    background: #e74c3c;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+  }
+  .step button:hover {
+    background: #c0392b;
+  }
+  
+  /* Budget Overview */
+  .overview-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #eef4fb;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .overview-section h3 {
+    margin-bottom: 1rem;
+  }
+  .overview-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background: #4A90E2;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+    }
+    .hero-text, .hero-slider {
+      flex: 1 1 100%;
+    }
+    header nav ul {
+      flex-direction: column;
+    }
+    .button-group {
+      flex-direction: column;
+    }
+  }
+  

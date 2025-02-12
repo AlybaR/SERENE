@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serene - Planification de Voyage</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+</head>
+<body class="fade-in">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <!-- La page "Préférences" est retirée pour l'instant -->
+        <li><a href="planning.html" class="active">Planification</a></li>
+        <li><a href="saved-preferences.html">Mes Préférences</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="section">
+      <h2>Planification de Voyage</h2>
+      <form id="planification-form">
+        <!-- Étape 1 : Informations Générales -->
+        <div class="form-step" id="plan-step-1">
+          <h3>Étape 1 : Informations Générales</h3>
+          <div class="form-group">
+            <label for="voyage-titre">Titre du voyage :</label>
+            <input type="text" id="voyage-titre" name="voyage-titre" placeholder="Ex : Vacances d'été" required>
+          </div>
+          <div class="form-group">
+            <label for="pays-origine">Pays d'origine :</label>
+            <select id="pays-origine" name="pays-origine" required>
+              <option value="">Sélectionnez un pays</option>
+              <option value="France">France</option>
+              <option value="États-Unis">États-Unis</option>
+              <option value="Japon">Japon</option>
+              <option value="Italie">Italie</option>
+              <option value="Royaume-Uni">Royaume-Uni</option>
+              <!-- Ajoutez d'autres pays -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pays-destination">Pays de destination :</label>
+            <select id="pays-destination" name="pays-destination" required>
+              <option value="">Sélectionnez un pays</option>
+              <option value="France">France</option>
+              <option value="États-Unis">États-Unis</option>
+              <option value="Japon">Japon</option>
+              <option value="Italie">Italie</option>
+              <option value="Royaume-Uni">Royaume-Uni</option>
+              <!-- Ajoutez d'autres pays -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="voyage-date-debut">Date de départ :</label>
+            <input type="date" id="voyage-date-debut" name="voyage-date-debut" required>
+          </div>
+          <div class="form-group">
+            <label for="voyage-date-fin">Date de retour :</label>
+            <input type="date" id="voyage-date-fin" name="voyage-date-fin" required>
+          </div>
+          <div class="form-group">
+            <label for="mode-transport-principal">Mode de transport principal :</label>
+            <select id="mode-transport-principal" name="mode-transport-principal" required>
+              <option value="">Sélectionnez un mode</option>
+              <option value="DRIVING">Voiture</option>
+              <option value="TRANSIT">Train / Transport en commun</option>
+              <option value="FLIGHT">Avion</option>
+            </select>
+          </div>
+          <div class="button-group">
+            <button type="button" id="calc-base-btn">Calculer itinéraire de base</button>
+            <button type="button" id="next-step-btn">Étape suivante</button>
+          </div>
+          <div id="base-itin-results"></div>
+          <!-- Carte pour l'itinéraire de base -->
+          <div id="base-map"></div>
+        </div>
+        <!-- Étape 2 : Détails du Voyage -->
+        <div class="form-step" id="plan-step-2" style="display: none;">
+          <h3>Étapes détaillées du voyage</h3>
+          <p>Ajoutez les différentes étapes de votre voyage. Pour chaque étape, renseignez :
+             <strong>Nom du lieu</strong>, <strong>Date de visite</strong>, <strong>Adresse</strong> (avec autocomplétion), 
+             <strong>Type de lieu</strong> (Hôtel, Restaurant, Airbnb, Maison d'hôtes, Activité, Autre),
+             <strong>Coût (en €)</strong> et <strong>Mode de transport</strong>.</p>
+          <div id="etapes-container"></div>
+          <button type="button" id="add-step-btn">Ajouter une étape</button>
+          <div class="button-group">
+            <button type="button" id="calc-detailed-btn">Calculer itinéraire détaillé</button>
+          </div>
+          <div id="detailed-itin-results"></div>
+          <div id="daily-summary"></div>
+          <!-- Carte pour l'itinéraire détaillé -->
+          <div id="detailed-map"></div>
+          <!-- Vue d’ensemble du Budget -->
+          <div id="budget-overview" class="overview-section" style="display:none;">
+            <h3>Vue d’ensemble du Budget</h3>
+            <p id="total-budget"></p>
+            <canvas id="cost-chart" width="400" height="400"></canvas>
+          </div>
+        </div>
+      </form>
+      <div id="plan-loading" class="loading" style="display: none; text-align: center;">
+        <div class="spinner"></div>
+        <p>Calcul en cours...</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Serene. Tous droits réservés.</p>
+  </footer>
+  <!-- Google Maps script -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG53pbXfoMEK3cl-pWJE2gdEgjwsFpADU&libraries=places" onerror="alert('Erreur de chargement de Google Maps');"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
