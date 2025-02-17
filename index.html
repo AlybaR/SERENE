@@ -5,55 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serene - Accueil</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts : Roboto & Poppins -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="fade-in">
-  <header>
+  <header class="container">
     <nav>
-      <ul>
+      <div class="logo">
+        <a href="index.html">Serene</a>
+      </div>
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="preferences.html">Préférences</a></li>
         <li><a href="planning.html">Planification</a></li>
-        <li><a href="saved-preferences.html">Mes Préférences</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Serene</h1>
-        <p>Planifiez votre voyage de rêve en quelques clics. Grâce à nos recommandations personnalisées et notre interface intuitive, organisez votre itinéraire du rêve.</p>
-        <div class="cta-buttons">
-          <a href="preferences.html" class="btn">Mes Préférences</a>
-          <a href="planning.html" class="btn">Planifier mon voyage</a>
-        </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text container">
+      <h1>Serene</h1>
+      <p>Transformez votre rêve en voyage inoubliable. Planifiez, découvrez et vivez des expériences uniques grâce à nos recommandations personnalisées.</p>
+      <div class="cta-buttons">
+        <a href="planning.html" class="btn">Planifier mon voyage</a>
+        <a href="blog.html" class="btn">Découvrir les bons plans</a>
       </div>
-      <div class="hero-slider">
-        <div class="slide active">
-          <img src="images/slide1.jpg" alt="Voyage inspirant">
-          <div class="slide-caption">Des destinations uniques pour des expériences inoubliables</div>
-        </div>
-        <div class="slide">
-          <img src="images/slide2.jpg" alt="Aventure">
-          <div class="slide-caption">Organisez vos aventures quotidiennes</div>
-        </div>
-        <div class="slide">
-          <img src="images/slide3.jpg" alt="Inspiration">
-          <div class="slide-caption">Inspirez-vous avec des recommandations sur mesure</div>
-        </div>
+    </div>
+    <div class="hero-slider">
+      <div class="slide active">
+        <img src="images/slide1.jpg" alt="Voyage inspirant">
+        <div class="slide-caption">Des destinations uniques pour des expériences inoubliables</div>
       </div>
-    </section>
-    <section class="about">
-      <h2>À propos de Serene</h2>
-      <p>Serene est la solution ultime pour les voyageurs modernes. Notre technologie avancée et notre interface intuitive vous permettent de créer des itinéraires sur mesure, d'obtenir des recommandations personnalisées et de gérer votre budget de voyage en temps réel.</p>
-      <p>Que vous rêviez d'explorer des cultures différentes, de vivre des aventures palpitantes ou simplement d'organiser un voyage parfaitement planifié, Serene est là pour transformer votre projet en réalité.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Serene. Tous droits réservés.</p>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+      <div class="slide">
+        <img src="images/slide2.jpg" alt="Aventure">
+        <div class="slide-caption">Organisez vos aventures quotidiennes</div>
+      </div>
+      <div class="slide">
+        <img src="images/slide3.jpg" alt="Inspiration">
+        <div class="slide-caption">Inspirez-vous avec des recommandations sur mesure</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos Section -->
+  <section class="about container">
+    <h2>À propos de Serene</h2>
+    <p>Serene est votre compagnon de voyage digital qui vous guide dans la planification de vos escapades. Grâce à une interface intuitive et des recommandations sur mesure, nous simplifions la préparation de votre itinéraire, optimisons votre budget et vous aidons à découvrir des destinations qui vous correspondent.</p>
+  </section>
+
+  <!-- Fonctionnalités Section -->
+  <section class="features container">
+    <h2>Nos Fonctionnalités</h2>
+    <div class="features-container">
+      <div class="feature-item">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Itinéraires Personnalisés</h3>
+        <p>Créez des itinéraires sur mesure en fonction de vos préférences et découvrez les meilleures routes.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-wallet"></i>
+        <h3>Optimisation du Budget</h3>
+        <p>Suivez et ajustez vos dépenses en temps réel grâce à nos outils de gestion budgétaire.</p>
+      </div>
+      <div class="feature-item">
+        <i class="fas fa-camera-retro"></i>
+        <h3>Inspiration et Conseils</h3>
+        <p>Accédez à des avis, articles et conseils pour découvrir des lieux incontournables et des bons plans.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Populaires Section -->
+  <section class="destinations container">
+    <h2>Destinations Populaires</h2>
+    <div class="destinations-container">
+      <div class="destination-item">
+        <img src="images/paris.jpg" alt="Paris">
+        <h3>Paris</h3>
+        <p>La ville lumière, célèbre pour ses monuments et sa gastronomie.</p>
+      </div>
+      <div class="destination-item">
+        <img src="images/tokyo.jpg" alt="Tokyo">
+        <h
