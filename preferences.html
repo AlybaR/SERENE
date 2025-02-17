@@ -6,7 +6,9 @@
   <title>Serene - Préférences</title>
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <!-- FontAwesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="fade-in">
   <header>
@@ -60,8 +62,7 @@
           </div>
           <div class="form-group">
             <label for="budget">Budget global (en €) :</label>
-            <input type="range" id="budget" name="budget" min="100" max="5000" step="50" value="1000"
-                   oninput="document.getElementById('budget-affiche').textContent = this.value">
+            <input type="range" id="budget" name="budget" min="100" max="5000" step="50" value="1000" oninput="document.getElementById('budget-affiche').textContent = this.value">
             <span id="budget-affiche">1000</span> €
           </div>
           <div class="form-group">
@@ -96,22 +97,12 @@
       <div id="result-summary" style="display: none;">
         <h2>Résumé de vos Préférences</h2>
         <div id="summary-content"></div>
-        <div id="map"></div>
-        <div class="button-group">
-          <button id="modify-btn">Modifier mes préférences</button>
-          <button id="save-btn">Sauvegarder mes préférences</button>
-        </div>
       </div>
     </section>
   </main>
   <footer>
     <p>&copy; 2025 Serene. Tous droits réservés.</p>
   </footer>
-  <!-- Google Maps script avec clé API et callback -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAG53pbXfoMEK3cl-pWJE2gdEgjwsFpADU&libraries=places&callback=initMap" onerror="document.getElementById('map-error').style.display = 'block';"></script>
-  <div id="map-error" style="display:none; color:red; text-align:center;">
-    Impossible de charger Google Maps. Vérifiez votre clé API.
-  </div>
   <script src="script.js"></script>
 </body>
 </html>
