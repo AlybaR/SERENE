@@ -5,30 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serene - Contact</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts (Roboto & Poppins) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700|Poppins:400,500,600&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="fade-in">
   <header>
     <nav>
-      <ul>
+      <div class="logo">
+        <a href="index.html">Serene</a>
+      </div>
+      <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="preferences.html">Préférences</a></li>
         <li><a href="planning.html">Planification</a></li>
         <li><a href="saved-preferences.html">Mes Préférences</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
+  
+  <!-- Section Hero pour Contact -->
+  <section class="contact-hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Contactez-Nous</h1>
+      <p>Nous sommes là pour répondre à vos questions et vous accompagner dans vos projets de voyage.</p>
+    </div>
+  </section>
+  
+  <!-- Formulaire de Contact -->
   <main>
-    <section class="section">
-      <h2>Contact</h2>
-      <p>Pour toute question, contactez-nous à <a href="mailto:contact@serene.com">contact@serene.com</a>.</p>
+    <section class="section contact-section">
+      <div class="contact-card">
+        <h2>Formulaire de Contact</h2>
+        <p>Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="contact-nom"><i class="fas fa-user"></i> Nom</label>
+            <input type="text" id="contact-nom" name="contact-nom" placeholder="Votre nom" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email"><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="contact-email" name="contact-email" placeholder="Votre email" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message"><i class="fas fa-comment"></i> Message</label>
+            <textarea id="contact-message" name="contact-message" rows="6" placeholder="Votre message" required></textarea>
+          </div>
+          <div class="button-group">
+            <button type="submit">Envoyer</button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
+  
   <footer>
-    <p>&copy; 2025 Serene. Tous droits réservés.</p>
+    <div class="footer-container">
+      <p>&copy; 2025 Serene. Tous droits réservés.</p>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </div>
   </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>
