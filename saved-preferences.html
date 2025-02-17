@@ -3,33 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Serene - Mes Préférences Sauvegardées</title>
+  <title>Serene - Mes Préférences</title>
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="fade-in">
   <header>
     <nav>
-      <ul>
+      <div class="logo">
+        <a href="index.html">Serene</a>
+      </div>
+      <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
-        <li><a href="preferences.html">Préférences</a></li>
         <li><a href="planning.html">Planification</a></li>
         <li><a href="saved-preferences.html" class="active">Mes Préférences</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
     </nav>
   </header>
+  
   <main>
     <section class="section">
-      <h2>Mes Préférences Sauvegardées</h2>
-      <div id="saved-list"></div>
-      <button id="clear-saved">Effacer les préférences sauvegardées</button>
+      <h2>Mes Préférences</h2>
+      <p>Retrouvez ici vos préférences sauvegardées pour personnaliser vos recommandations et suivre vos voyages.</p>
+      <div id="saved-list">
+        <!-- Vos préférences sauvegardées seront affichées ici -->
+      </div>
+      <div class="button-group">
+        <button type="button" id="clear-saved">Effacer mes Préférences</button>
+      </div>
     </section>
   </main>
+  
   <footer>
-    <p>&copy; 2025 Serene. Tous droits réservés.</p>
+    <div class="footer-container">
+      <p>&copy; 2025 Serene. Tous droits réservés.</p>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </div>
   </footer>
+  
   <script src="script.js"></script>
 </body>
 </html>
